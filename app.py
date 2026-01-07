@@ -95,19 +95,3 @@ if uploaded_file is not None:
     )
     ax.set_title("Customer Clusters")
     st.pyplot(fig)
-
-    # ----------------------------
-    # Cluster Summary
-    # ----------------------------
-    st.subheader("📌 Cluster Summary")
-    summary = df.groupby('Cluster')[[
-        'Age',
-        'Work_Experience',
-        'Family_Size',
-        'Spending_Score'
-    ]].mean()
-
-    st.dataframe(summary)
-
-else:
-    st.info("👆 Upload a CSV file to get started")
